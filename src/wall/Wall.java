@@ -3,17 +3,26 @@ package wall;
 public class Wall {
 
     private double height=0;
-    private double weight=0;
+    private double width=0;
 	
     public Wall() {
     	
     }
     
-    public Wall(double height, double weight) {
+    public Wall(double height, double width) {
+    	
+    	if (height<0) {
+    		height = 0;
+    		}
 		
 		this.height = height;
-		this.weight = weight;
-	}
+		
+     if (width<0) {
+		width = 0;
+		}
+     
+     this.width = width;
+    }
 
 	public double getHeight() {
 		
@@ -29,18 +38,24 @@ public class Wall {
 		this.height = height;
 	}
 
-	public double getWeight() {
+	public double getWidth() {
 		
-		return weight;
+		return width;
 	}
 
-	public void setWeight(double weight) {
+	public void setWeight(double width) {
 		
-		if(weight<0)
+		if(width<0)
 		{
-			weight=0;
+			width=0;
 		}
-		this.weight = weight;
+		this.width = width;
+	}
+	
+	public double getArea() {
+		
+		return height * width ;
+		
 	}
 
    
